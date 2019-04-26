@@ -24,8 +24,9 @@ get '/visit' do
 
 end
 post '/visit' do  
-	@username = params[:username]
-	@phone = params[:phone]
-	@datestump = params[:datestump]
-	@barber = params[:barber]
+		c = Client.new params[:client]
+		c.save
+
+		erb :visit
+
 end

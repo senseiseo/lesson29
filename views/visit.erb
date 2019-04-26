@@ -4,22 +4,22 @@
 <form action="visit" method="POST" role="form">
   <div class="form-group">
     <label> Ваше имя</label>
-    <input name="username" type="text" class="form-control"  placeholder="ваше имя" value="<%= @username%>" >
+    <input name="client[name]" type="text" class="form-control"  placeholder="ваше имя" value="" >
   </div>
 
   <div class="form-group">
     <label> Ваш телефон</label>
-    <input name="phone"type="text" class="form-control"  placeholder="Телефон" value="<%= @phone%>" >
+    <input name="client[phone]"type="text" class="form-control"  placeholder="Телефон" value="" >
   </div>
 
   <div class="form-group">
     <label>Когда вас ждать</label>
-    <input name="datestump" type="text" class="form-control"  placeholder="укажите удобное для вас время" value="<%= @datetime%>" >
+    <input name="client[datestump]" type="text" class="form-control"  placeholder="укажите удобное для вас время" value="" >
   </div>
 
  <div class="form-group">
     <label for="exampleFormControlSelect1">Выбор парихмахера</label>
-    <select name="barber" class="form-control" id="exampleFormControlSelect1">
+    <select name="client[barber]" class="form-control" id="exampleFormControlSelect1">
       <option <%= @barber == 'Джон смит' ? 'selected' : '' %>>Джон смит</option>
       <option <%= @barber == 'Смит джон' ? 'selected' : '' %>> Смит джон</option>
       <option <%= @barber == 'Саманта клара' ? 'selected' : '' %>>Саманта клара</option>
