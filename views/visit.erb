@@ -4,17 +4,17 @@
 <form action="visit" method="POST" role="form">
   <div class="form-group">
     <label> Ваше имя</label>
-    <input name="client[name]" type="text" class="form-control"  placeholder="ваше имя" value="" >
+    <input name="client[name]" type="text" class="form-control"  placeholder="ваше имя" value="<%= @c.name%>" >
   </div>
 
   <div class="form-group">
     <label> Ваш телефон</label>
-    <input name="client[phone]"type="text" class="form-control"  placeholder="Телефон" value="" >
+    <input name="client[phone]"type="text" class="form-control"  placeholder="Телефон" value="<%= @c.phone %>" >
   </div>
 
   <div class="form-group">
     <label>Когда вас ждать</label>
-    <input name="client[datestump]" type="text" class="form-control"  placeholder="укажите удобное для вас время" value="" >
+    <input name="client[datestump]" type="text" class="form-control"  placeholder="укажите удобное для вас время" value="<%= @c.datestump%>" >
   </div>
 
  <div class="form-group">
