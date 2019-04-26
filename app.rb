@@ -18,3 +18,14 @@ get '/' do
 	@barbers = Barber.all
 	erb :index
 end
+
+get '/visit' do   
+	erb :visit
+
+end
+post '/visit' do  
+	@username = params[:username]
+	@phone = params[:phone]
+	@datestump = params[:datestump]
+	@barber = params[:barber]
+end
