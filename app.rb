@@ -17,9 +17,9 @@ class Barber < ActiveRecord::Base
 
 end
 
-get '/' do
+before do
 	@barbers = Barber.all
-	erb :index
+	
 end
 
 get '/visit' do   
@@ -36,3 +36,8 @@ post '/visit' do
 			erb :visit
 		end
 end
+
+get '/barber/:id' do  
+	erb "Barber"
+
+end 
