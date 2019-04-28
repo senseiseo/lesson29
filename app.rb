@@ -17,16 +17,19 @@ class Barber < ActiveRecord::Base
 
 end
 
+get '/' do 
+	erb :index
+end
+
 before do
-	@barbers = Barber.all
-	
+	@barbers = Barber.all	
 end
 
 get '/visit' do   
 	@c = Client.new
 	erb :visit
-
 end
+
 post '/visit' do  
 		@c = Client.new params[:client]
 		if @c.save
@@ -38,6 +41,12 @@ post '/visit' do
 end
 
 get '/barber/:id' do  
-	erb "Barber"
+	@barber = Barber.find(params[:id])
+	erb :barber
+end  
 
-end 
+get '/booking' do   
+	@client = Client.order('created_at DESC')
+	
+	erb :booking
+end
